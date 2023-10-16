@@ -35,15 +35,33 @@
      return ((noteOne + noteTwo) /2 )
 }
 
-function printMessageNote (listStudents){
-    return` A media do(a) aluno(a) ${listStudents.name} é: ${finalNote(listStudents.noteOne, listStudents.noteTwo)}
+function printMessageNotePass (listStudents){
 
-    `
+       return ` A media do(a) aluno(a) ${listStudents.name} é: ${finalNote(listStudents.noteOne, listStudents.noteTwo)}
+        Não foi dessa vez, ${listStudents.name}! tente novamente 
+        `
+    }
+function printMessageNoteNotPass (listStudents){
+
+       return ` A media do(a) aluno(a) ${listStudents.name} é: ${finalNote(listStudents.noteOne, listStudents.noteTwo)}
+       Parabéns, ${listStudents.name}! Você foi aprovado(a) no concurso!
+       `
+    }
+
+if(finalNote <= 6.9){
+
+for(let massageStudentPass of listStudents){
+    let massagePass = printMessageNotePass(massageStudentPass)
+    alert(massagePass)
 }
 
-for(let massageStudent of listStudents){
-    let massage = printMessageNote(massageStudent)
-    alert(massage)
-}
+}else{
 
+    for(let massageStudentNotPass of listStudents){
+        let massageNotPass = printMessageNoteNotPass(massageStudentNotPass)
+        alert(massageNotPass)
+    }
+
+
+}
 
