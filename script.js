@@ -28,9 +28,6 @@
 
  ]
 
-
- 
- 
  function finalNote(noteOne, noteTwo){
      return (((noteOne + noteTwo) /2 )).toFixed(2)
 }
@@ -49,17 +46,17 @@ function printMessageNoteNotPass (listStudents){
     }
 
 if(finalNote <= 6.99){
-
-for(let massageStudentPass of listStudents){
-    let massagePass = printMessageNotePass(massageStudentPass)
-    alert(massagePass)
-}
-
-}else if(finalNote => 7){
-
-    for(let massageStudentNotPass of listStudents){
-        let massageNotPass = printMessageNoteNotPass(massageStudentNotPass)
-        alert(massageNotPass)
+    
+    for(let messageStudentNotPass of listStudents){
+        let messageNotPass = printMessageNoteNotPass(messageStudentNotPass)
+        alert(messageNotPass)
+    }
+    
+}else{
+    
+    for(let messageStudentPass of listStudents){
+        let messagePass = printMessageNotePass(messageStudentPass)
+        alert(messagePass)
     }
 
 
