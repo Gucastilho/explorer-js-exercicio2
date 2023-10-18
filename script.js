@@ -33,32 +33,42 @@
 }
 
 function printMessageNotePass (listStudents){
-
-       return ` A media do(a) aluno(a) ${listStudents.name} é: ${finalNote(listStudents.noteOne, listStudents.noteTwo)}
-        Não foi dessa vez, ${listStudents.name}! tente novamente 
-        `
-    }
-function printMessageNoteNotPass (listStudents){
-
-       return ` A media do(a) aluno(a) ${listStudents.name} é: ${finalNote(listStudents.noteOne, listStudents.noteTwo)}
-       Parabéns, ${listStudents.name}! Você foi aprovado(a) no concurso!
+    
+    
+return ` A media do(a) aluno(a) ${listStudents.name} é: ${finalNote(listStudents.noteOne, listStudents.noteTwo)}
+         Parabéns, ${listStudents.name}! Você foi aprovado(a) no concurso!
        `
-    }
+}
+    function printMessageNoteNotPass (listStudents){
+        
+return ` A media do(a) aluno(a) ${listStudents.name} é: ${finalNote(listStudents.noteOne, listStudents.noteTwo)}
+         Não foi dessa vez, ${listStudents.name}! tente novamente 
+     `
+     }
 
-if(finalNote <= 6.99){
     
     for(let messageStudentNotPass of listStudents){
-        let messageNotPass = printMessageNoteNotPass(messageStudentNotPass)
-        alert(messageNotPass)
+
+        let finalNote2 = finalNote(messageStudentNotPass.noteOne, messageStudentNotPass.noteTwo)
+
+        if(finalNote2 <= 6.99){
+
+            let messageNotPass = printMessageNoteNotPass(messageStudentNotPass)
+            alert(messageNotPass)
+
+        }else{
+            
+            let messagePass = printMessageNotePass(messageStudentNotPass)
+            alert(messagePass)
+
+        }
+
     }
     
-}else{
+
     
-    for(let messageStudentPass of listStudents){
-        let messagePass = printMessageNotePass(messageStudentPass)
-        alert(messagePass)
-    }
 
 
-}
+
+
 
